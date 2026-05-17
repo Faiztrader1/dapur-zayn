@@ -1,0 +1,705 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pempek & Tekwan Dapur Zayn</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    background: #0d0d0d;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-container {
+    width: 100%;
+    max-width: 450px;
+    background: #141414;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.header {
+    text-align: center;
+    padding: 28px 16px 16px;
+}
+
+.subtitle {
+    color: #d4af37;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.divider {
+    width: 55px;
+    height: 1px;
+    background: #d4af37;
+    margin: 14px auto 0;
+}
+
+.main-menu-section {
+    padding: 0 14px;
+}
+
+.card-large {
+    background: #1a1a1a;
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.image-box-large {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+.image-box-large img,
+.image-box-square img,
+.image-box-medium img,
+.qris-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.satuan-section {
+    padding: 15px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card-satuan {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+.image-box-square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.menu-name {
+    font-size: 11px;
+    color: #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price {
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.paket-section {
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card-paket {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.paket-title {
+    font-size: 12px;
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.image-box-medium {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.paket-list {
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    color: #bdbdbd;
+    margin-bottom: 6px;
+}
+
+.paket-price {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    padding: 24px 20px 10px;
+    line-height: 1.6;
+}
+
+.order-form-container,
+.payment-container {
+    padding: 20px 15px;
+    background: #1a1a1a;
+    margin-top: 18px;
+    border-top: 1px solid #292929;
+}
+
+.form-section-title {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #292929;
+    padding-bottom: 7px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+}
+
+.form-group label {
+    font-size: 12px;
+    color: #ccc;
+    flex: 1;
+}
+
+.form-group select {
+    width: 135px;
+    background: #101010;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 7px;
+    font-size: 12px;
+}
+
+.total-box {
+    background: #101010;
+    border: 1px dashed rgba(212,175,55,0.45);
+    border-radius: 8px;
+    padding: 13px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.total-amount {
+    color: #d4af37;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.payment-option-title {
+    font-size: 12px;
+    color: #999;
+    margin: 12px 0 7px;
+}
+
+.cash-card,
+.bank-card,
+.qris-box {
+    background: #1d1d1d;
+    border: 1px solid #2b2b2b;
+    border-radius: 9px;
+    padding: 12px;
+    margin-bottom: 9px;
+}
+
+.cash-card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px dashed rgba(37,211,102,0.45);
+    border-radius: 9px;
+}
+
+.bank-card {
+    border-radius: 9px;
+}
+
+.cash-text h4 {
+    font-size: 13px;
+    color: #fff;
+}
+
+.cash-text p {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 3px;
+}
+
+.bank-name {
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.bank-number {
+    font-size: 15px;
+    color: #d4af37;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.bank-holder {
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+}
+
+.qris-box {
+    text-align: center;
+    border-style: dashed;
+    border-radius: 9px;
+}
+
+.qris-title {
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.qris-image-placeholder {
+    width: 145px;
+    height: 145px;
+    background: #fff;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qris-image-placeholder img {
+    object-fit: contain;
+}
+
+.booking-section {
+    text-align: center;
+    padding: 25px 15px 12px;
+}
+
+.booking-title {
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 16px;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.whatsapp-sub {
+    font-size: 11px;
+    color: #777;
+    margin-top: 9px;
+}
+
+.review-section {
+    padding: 20px 15px;
+    border-top: 1px solid #222;
+}
+
+.review-header-text {
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.review-box {
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.avatar-placeholder {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #222;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.reviewer-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.reviewer-location {
+    font-size: 10px;
+    color: #666;
+    margin-left: 6px;
+}
+
+.stars {
+    color: #d4af37;
+    font-size: 10px;
+    margin: 4px 0;
+}
+
+.review-text {
+    font-size: 11px;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #555;
+    padding: 20px 0;
+}
+</style>
+</head>
+
+<body>
+<div class="mobile-container">
+
+    <div class="header">
+        <span class="subtitle">Cita Rasa Otentik Palembang</span>
+        <h1 class="title">Pempek & Tekwan Dapur Zayn</h1>
+        <div class="divider"></div>
+    </div>
+
+    <section class="main-menu-section">
+        <div class="card-large"><div class="image-box-large"><img src="menu1.jpeg" alt="Pempek"></div></div>
+        <div class="card-large"><div class="image-box-large"><img src="menu2.jpeg" alt="Tekwan"></div></div>
+        <div class="card-large"><div class="image-box-large"><img src="menu3.jpeg" alt="Bakmi"></div></div>
+    </section>
+
+    <section class="satuan-section">
+        <div class="grid-3">
+            <div class="card-satuan">
+                <div class="image-box-square"><img src="lenjer.jpeg" alt="Lenjer"></div>
+                <div class="menu-name">Pempek Lenjer</div>
+                <div class="price">Rp 2.000</div>
+            </div>
+
+            <div class="card-satuan">
+                <div class="image-box-square"><img src="adaan.jpeg" alt="Adaan"></div>
+                <div class="menu-name">Pempek Adaan</div>
+                <div class="price">Rp 2.000</div>
+            </div>
+
+            <div class="card-satuan">
+                <div class="image-box-square"><img src="kulit.jpeg" alt="Kulit"></div>
+                <div class="menu-name">Pempek Kulit</div>
+                <div class="price">Rp 2.000</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="paket-section">
+        <div class="card-paket">
+            <div class="paket-title">Paket Vakum</div>
+            <div class="image-box-medium"><img src="paket_vakum.jpeg" alt="Paket Vakum"></div>
+            <div class="paket-list"><span>Isi 10</span><span class="paket-price">Rp 20rb</span></div>
+            <div class="paket-list"><span>Isi 25</span><span class="paket-price">Rp 50rb</span></div>
+            <div class="paket-list"><span>Isi 50</span><span class="paket-price">Rp 100rb</span></div>
+        </div>
+
+        <div class="card-paket">
+            <div class="paket-title">Tekwan Instan</div>
+            <div class="image-box-medium"><img src="paket_tekwan.jpeg" alt="Tekwan Instan"></div>
+            <div class="paket-list"><span>½ Kg</span><span class="paket-price">Rp 35rb</span></div>
+            <div class="paket-list"><span>1 Kg</span><span class="paket-price">Rp 70rb</span></div>
+        </div>
+    </section>
+
+    <div class="info-text">
+        "Dibuat higienis tanpa bahan pengawet kimia. Cuko asli menggunakan gula batok pilihan berkualitas tinggi."
+    </div>
+
+    <section class="order-form-container">
+        <div class="form-section-title">Pilih Jumlah Order</div>
+
+        <div class="form-group">
+            <label>Pempek Adaan</label>
+            <select id="adaan" onchange="hitungTotal()"><option value="0">0 Pcs</option></select>
+        </div>
+
+        <div class="form-group">
+            <label>Pempek Kulit</label>
+            <select id="kulit" onchange="hitungTotal()"><option value="0">0 Pcs</option></select>
+        </div>
+
+        <div class="form-group">
+            <label>Pempek Lenjer</label>
+            <select id="lenjer" onchange="hitungTotal()"><option value="0">0 Pcs</option></select>
+        </div>
+
+        <div class="form-group">
+            <label>Pempek Vakum Varian</label>
+            <select id="vakum_varian" onchange="hitungTotal()">
+                <option value="0">Pilih Paket</option>
+                <option value="20000">Isi 10 - Rp 20.000</option>
+                <option value="50000">Isi 25 - Rp 50.000</option>
+                <option value="100000">Isi 50 - Rp 100.000</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Pempek Campur Vakum</label>
+            <select id="vakum_campur" onchange="hitungTotal()">
+                <option value="0">Pilih Paket</option>
+                <option value="20000">Isi 10 - Rp 20.000</option>
+                <option value="50000">Isi 25 - Rp 50.000</option>
+                <option value="100000">Isi 50 - Rp 100.000</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Tekwan Vakum</label>
+            <select id="tekwan" onchange="hitungTotal()">
+                <option value="0">Pilih Paket</option>
+                <option value="35000">½ Kilo - Rp 35.000</option>
+                <option value="70000">1 Kilo - Rp 70.000</option>
+            </select>
+        </div>
+
+        <div class="total-box">
+            <span class="total-label">Total Harga:</span>
+            <span class="total-amount" id="display_total">Rp 0</span>
+        </div>
+    </section>
+
+    <section class="payment-container">
+        <div class="form-section-title">Metode Pembayaran</div>
+
+        <div class="payment-option-title">💵 Bayar Tunai</div>
+        <div class="cash-card">
+            <div>🏪</div>
+            <div class="cash-text">
+                <h4>Bisa Langsung Di Tempat</h4>
+                <p>Bayar pas ambil pesanan atau COD.</p>
+            </div>
+        </div>
+
+        <div class="payment-option-title">💳 Transfer Bank / E-Wallet</div>
+
+        <div class="bank-card">
+            <div class="bank-name">SeaBank</div>
+            <div class="bank-number">901978473969</div>
+            <div class="bank-holder">a.n Hermawati</div>
+        </div>
+
+        <div class="bank-card">
+            <div class="bank-name">BRI</div>
+            <div class="bank-number">0098 0101 4851 537</div>
+            <div class="bank-holder">a.n Hermawati</div>
+        </div>
+
+        <div class="bank-card">
+            <div class="bank-name">DANA</div>
+            <div class="bank-number">0899 0168 125</div>
+            <div class="bank-holder">a.n Hermawati</div>
+        </div>
+
+        <div class="qris-box">
+            <div class="qris-title">Scan QRIS Resmi Toko</div>
+            <div class="qris-image-placeholder">
+                <img src="qris.jpeg" alt="QRIS">
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <h2 class="booking-title">ORDER BOOKING NOW</h2>
+        <button onclick="kirimWA()" class="btn-whatsapp">KIRIM PESAN KE WHATSAPP</button>
+        <p class="whatsapp-sub">Admin: +62 895-8060-43807</p>
+    </section>
+
+    <section class="review-section">
+        <div class="review-header-text">KATA MEREKA YANG UDAH COBA</div>
+
+        <div class="review-box">
+            <div class="avatar-placeholder">IR</div>
+            <div>
+                <div>
+                    <span class="reviewer-name">Ibu Rahma</span>
+                    <span class="reviewer-location">Jakarta</span>
+                </div>
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="review-text">Pempek adaan-nya mantap. Ikan tenggirinya berasa, cukonya juga enak.</p>
+            </div>
+        </div>
+
+        <div class="review-box">
+            <div class="avatar-placeholder">FA</div>
+            <div>
+                <div>
+                    <span class="reviewer-name">Fadel Ahmad</span>
+                    <span class="reviewer-location">Palembang</span>
+                </div>
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="review-text">Tekwan frozen-nya praktis banget buat stok di rumah. Kuahnya segar pas disajikan hangat, bumbunya berasa otentik!</p>
+            </div>
+        </div>
+
+        <div class="review-box">
+            <div class="avatar-placeholder">ND</div>
+            <div>
+                <div>
+                    <span class="reviewer-name">Nadia Utami</span>
+                    <span class="reviewer-location">Bandung</span>
+                </div>
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="review-text">Paket vakumnya sampai dengan aman. Pempek kulitnya renyah pas digoreng dan ga amis sama sekali. Langganan fix!</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 Pempek & Tekwan Dapur Zayn.
+    </div>
+
+</div>
+
+<script>
+window.onload = function() {
+    const dropdowns = ['adaan', 'kulit', 'lenjer'];
+
+    dropdowns.forEach(function(id) {
+        const select = document.getElementById(id);
+
+        for (let i = 1; i <= 100; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = i + ' Pcs';
+            select.appendChild(opt);
+        }
+    });
+};
+
+function hitungTotal() {
+    const adaan = parseInt(document.getElementById('adaan').value) || 0;
+    const kulit = parseInt(document.getElementById('kulit').value) || 0;
+    const lenjer = parseInt(document.getElementById('lenjer').value) || 0;
+
+    const vakumVarian = parseInt(document.getElementById('vakum_varian').value) || 0;
+    const vakumCampur = parseInt(document.getElementById('vakum_campur').value) || 0;
+    const tekwan = parseInt(document.getElementById('tekwan').value) || 0;
+
+    const total = (adaan * 2000) + (kulit * 2000) + (lenjer * 2000) + vakumVarian + vakumCampur + tekwan;
+
+    document.getElementById('display_total').textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+    return total;
+}
+
+function kirimWA() {
+    const adaan = document.getElementById('adaan').value;
+    const kulit = document.getElementById('kulit').value;
+    const lenjer = document.getElementById('lenjer').value;
+
+    const eVarian = document.getElementById('vakum_varian');
+    const eCampur = document.getElementById('vakum_campur');
+    const eTekwan = document.getElementById('tekwan');
+
+    const total = hitungTotal();
+    const totalHarga = document.getElementById('display_total').textContent;
+
+    if (total === 0) {
+        alert('Pilih dulu menunya sebelum kirim ke WhatsApp.');
+        return;
+    }
+
+    let text = "Halo Dapur Zayn, saya mau order Pempek & Tekwan:%0A%0A";
+
+    if (parseInt(adaan) > 0) text += "- Pempek Adaan: " + adaan + " Pcs%0A";
+    if (parseInt(kulit) > 0) text += "- Pempek Kulit: " + kulit + " Pcs%0A";
+    if (parseInt(lenjer) > 0) text += "- Pempek Lenjer: " + lenjer + " Pcs%0A";
+    if (parseInt(eVarian.value) > 0) text += "- Pempek Vakum Varian: " + eVarian.options[eVarian.selectedIndex].text + "%0A";
+    if (parseInt(eCampur.value) > 0) text += "- Pempek Campur Vakum: " + eCampur.options[eCampur.selectedIndex].text + "%0A";
+    if (parseInt(eTekwan.value) > 0) text += "- Tekwan Vakum: " + eTekwan.options[eTekwan.selectedIndex].text + "%0A";
+
+    text += "%0ATotal Estimasi: " + totalHarga;
+
+    window.location.href = "https://wa.me/62895806043807?text=" + text;
+}
+</script>
+
+</body>
+</html></pre>
+        </body>
+    </html>
