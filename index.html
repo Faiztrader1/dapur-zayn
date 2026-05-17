@@ -220,6 +220,13 @@ body {
     font-weight: bold;
 }
 
+.strike-through {
+    text-decoration: line-through;
+    color: #ff4d4d;
+    font-size: 9px;
+    margin-right: 4px;
+}
+
 .info-text {
     text-align: center;
     font-size: 12px;
@@ -570,15 +577,15 @@ body {
             <div class="paket-title">Paket Vakum</div>
             <div class="image-box-medium"><img src="paket_vakum.jpeg" alt="Paket Vakum"></div>
             <div class="paket-list"><span>Isi 10</span><span class="paket-price">Rp 20rb</span></div>
-            <div class="paket-list"><span>Isi 25</span><span class="paket-price">Rp 50rb</span></div>
-            <div class="paket-list"><span>Isi 50</span><span class="paket-price">Rp 100rb</span></div>
+            <div class="paket-list"><span>Isi 50</span><span class="paket-price"><span class="strike-through">Rp 100rb</span>Rp 95rb</span></div>
+            <div class="paket-list"><span>Isi 100</span><span class="paket-price"><span class="strike-through">Rp 200rb</span>Rp 190rb</span></div>
         </div>
 
         <div class="card-paket">
             <div class="paket-title">Tekwan Instan</div>
             <div class="image-box-medium"><img src="paket_tekwan.jpeg" alt="Tekwan Instan"></div>
-            <div class="paket-list"><span>½ Kg</span><span class="paket-price">Rp 35rb</span></div>
-            <div class="paket-list"><span>1 Kg</span><span class="paket-price">Rp 70rb</span></div>
+            <div class="paket-list"><span>½ Kg</span><span class="paket-price">Rp 40rb</span></div>
+            <div class="paket-list"><span>1 Kg</span><span class="paket-price"><span class="strike-through">Rp 80rb</span>Rp 70rb</span></div>
         </div>
     </section>
 
@@ -609,8 +616,8 @@ body {
             <select id="vakum_varian" onchange="hitungTotal()">
                 <option value="0">Pilih Paket</option>
                 <option value="20000">Isi 10 - Rp 20.000</option>
-                <option value="50000">Isi 25 - Rp 50.000</option>
-                <option value="100000">Isi 50 - Rp 100.000</option>
+                <option value="95000">Isi 50 - Rp 95.000 (Promo)</option>
+                <option value="190000">Isi 100 - Rp 190.000 (Promo)</option>
             </select>
         </div>
 
@@ -619,8 +626,8 @@ body {
             <select id="vakum_campur" onchange="hitungTotal()">
                 <option value="0">Pilih Paket</option>
                 <option value="20000">Isi 10 - Rp 20.000</option>
-                <option value="50000">Isi 25 - Rp 50.000</option>
-                <option value="100000">Isi 50 - Rp 100.000</option>
+                <option value="95000">Isi 50 - Rp 95.000 (Promo)</option>
+                <option value="190000">Isi 100 - Rp 190.000 (Promo)</option>
             </select>
         </div>
 
@@ -628,8 +635,8 @@ body {
             <label>Tekwan Vakum</label>
             <select id="tekwan" onchange="hitungTotal()">
                 <option value="0">Pilih Paket</option>
-                <option value="35000">½ Kilo - Rp 35.000</option>
-                <option value="70000">1 Kilo - Rp 70.000</option>
+                <option value="40000">½ Kilo - Rp 40.000</option>
+                <option value="70000">1 Kilo - Rp 70.000 (Promo)</option>
             </select>
         </div>
 
@@ -772,7 +779,6 @@ function hitungTotal() {
     return total;
 }
 
-// SISTEM BARU: Menggunakan string murni ter-enkripsi penuh agar dijamin tidak terpotong di HP
 function kirimWA() {
     var adaan = document.getElementById('adaan').value;
     var kulit = document.getElementById('kulit').value;
