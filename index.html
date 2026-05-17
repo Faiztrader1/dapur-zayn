@@ -774,6 +774,7 @@ function hitungTotal() {
     return total;
 }
 
+// Sistem Filter Pesanan WhatsApp Otomatis (Tanya / Beli) - VERSI SEMPURNA
 function kirimWA() {
     const adaan = document.getElementById('adaan').value;
     const kulit = document.getElementById('kulit').value;
@@ -786,22 +787,40 @@ function kirimWA() {
     const total = hitungTotal();
     const totalHarga = document.getElementById('display_total').textContent;
 
+    let text = "";
+
+    // KONDISI 1: Belum pilih menu (Ingin Tanya-Tanya Saja)
     if (total === 0) {
-        alert('Pilih dulu menunya sebelum kirim ke WhatsApp.');
-        return;
+        text = "Halo Admin Dapur Zayn, saya mau tanya-tanya terlebih dahulu mengenai menu pempek dan tekwannya ya. Terima kasih! 🙏😊";
+    } 
+    // KONDISI 2: Sudah pilih menu (Format Nota Otomatis Terurai Rapi)
+    else {
+        text = "Halo Admin Dapur Zayn, saya ingin memesan menu Pempek & Tekwan berikut ini:%0A%0A";
+
+        if (parseInt(adaan) > 0) text += "📌 Pempek Adaan : " + adaan + " Pcs%0A";
+        if (parseInt(kulit) > 0) text += "📌 Pempek Kulit : " + kulit + " Pcs%0A";
+        if (parseInt(lenjer) > 0) text += "📌 Pempek Lenjer : " + lenjer + " Pcs%0A";
+        
+        if (eVarian.value !== "0") {
+            let txtVarian = eVarian.options[eVarian.selectedIndex].text.split(' - ')[0];
+            text += "📦 Paket Vakum Varian : " + txtVarian + "%0A";
+        }
+        if (eCampur.value !== "0") {
+            let txtCampur = eCampur.options[eCampur.selectedIndex].text.split(' - ')[0];
+            text += "📦 Paket Campur Vakum : " + txtCampur + "%0A";
+        }
+        if (eTekwan.value !== "0") {
+            let txtTekwan = eTekwan.options[eTekwan.selectedIndex].text.split(' - ')[0];
+            text += "🍲 Tekwan Vakum : " + txtTekwan + "%0A";
+        }
+
+        text += "%0A────────────────────%0A";
+        text += "💰 *Total Estimasi:* " + totalHarga + "%0A";
+        text += "────────────────────%0A%0A";
+        text += "Mohon segera diproses pesanan saya ya, Kak. Terima kasih! 🙏";
     }
 
-    let text = "Halo Dapur Zayn, saya mau order Pempek & Tekwan:%0A%0A";
-
-    if (parseInt(adaan) > 0) text += "- Pempek Adaan: " + adaan + " Pcs%0A";
-    if (parseInt(kulit) > 0) text += "- Pempek Kulit: " + kulit + " Pcs%0A";
-    if (parseInt(lenjer) > 0) text += "- Pempek Lenjer: " + lenjer + " Pcs%0A";
-    if (parseInt(eVarian.value) > 0) text += "- Pempek Vakum Varian: " + eVarian.options[eVarian.selectedIndex].text + "%0A";
-    if (parseInt(eCampur.value) > 0) text += "- Pempek Campur Vakum: " + eCampur.options[eCampur.selectedIndex].text + "%0A";
-    if (parseInt(eTekwan.value) > 0) text += "- Tekwan Vakum: " + eTekwan.options[eTekwan.selectedIndex].text + "%0A";
-
-    text += "%0ATotal Estimasi: " + totalHarga;
-
+    // Eksekusi buka chat WhatsApp otomatis
     window.location.href = "https://wa.me/62895806043807?text=" + text;
 }
 
