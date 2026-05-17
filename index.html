@@ -62,7 +62,6 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* Penyesuaian Header dengan Logo */
 .header {
     text-align: center;
     padding: 24px 16px 16px;
@@ -504,7 +503,6 @@ body {
     padding: 20px 0;
 }
 
-/* Titik Kecil Pengubah Tema di Pojok Kanan Bawah */
 .theme-switcher {
     position: fixed;
     bottom: 20px;
@@ -774,54 +772,49 @@ function hitungTotal() {
     return total;
 }
 
-// Sistem Filter Pesanan WhatsApp Otomatis (Tanya / Beli) - VERSI SEMPURNA
+// SISTEM BARU: Menggunakan string murni ter-enkripsi penuh agar dijamin tidak terpotong di HP
 function kirimWA() {
-    const adaan = document.getElementById('adaan').value;
-    const kulit = document.getElementById('kulit').value;
-    const lenjer = document.getElementById('lenjer').value;
+    var adaan = document.getElementById('adaan').value;
+    var kulit = document.getElementById('kulit').value;
+    var lenjer = document.getElementById('lenjer').value;
 
-    const eVarian = document.getElementById('vakum_varian');
-    const eCampur = document.getElementById('vakum_campur');
-    const eTekwan = document.getElementById('tekwan');
+    var eVarian = document.getElementById('vakum_varian');
+    var eCampur = document.getElementById('vakum_campur');
+    var eTekwan = document.getElementById('tekwan');
 
-    const total = hitungTotal();
-    const totalHarga = document.getElementById('display_total').textContent;
+    var total = hitungTotal();
+    var totalHarga = document.getElementById('display_total').textContent;
 
-    let text = "";
+    var textMessage = "";
 
-    // KONDISI 1: Belum pilih menu (Ingin Tanya-Tanya Saja)
     if (total === 0) {
-        text = "Halo Admin Dapur Zayn, saya mau tanya-tanya terlebih dahulu mengenai menu pempek dan tekwannya ya. Terima kasih! 🙏😊";
-    } 
-    // KONDISI 2: Sudah pilih menu (Format Nota Otomatis Terurai Rapi)
-    else {
-        text = "Halo Admin Dapur Zayn, saya ingin memesan menu Pempek & Tekwan berikut ini:%0A%0A";
+        textMessage = "Halo Admin Dapur Zayn, saya mau tanya-tanya terlebih dahulu mengenai menu pempek dan tekwannya ya. Terima kasih! 🙏😊";
+    } else {
+        textMessage = "Halo Admin Dapur Zayn, saya ingin memesan menu Pempek & Tekwan berikut ini:\n\n";
 
-        if (parseInt(adaan) > 0) text += "📌 Pempek Adaan : " + adaan + " Pcs%0A";
-        if (parseInt(kulit) > 0) text += "📌 Pempek Kulit : " + kulit + " Pcs%0A";
-        if (parseInt(lenjer) > 0) text += "📌 Pempek Lenjer : " + lenjer + " Pcs%0A";
+        if (parseInt(adaan) > 0) { textMessage += "📌 Pempek Adaan : " + adaan + " Pcs\n"; }
+        if (parseInt(kulit) > 0) { textMessage += "📌 Pempek Kulit : " + kulit + " Pcs\n"; }
+        if (parseInt(lenjer) > 0) { textMessage += "📌 Pempek Lenjer : " + lenjer + " Pcs\n"; }
         
-        if (eVarian.value !== "0") {
-            let txtVarian = eVarian.options[eVarian.selectedIndex].text.split(' - ')[0];
-            text += "📦 Paket Vakum Varian : " + txtVarian + "%0A";
+        if (eVarian && eVarian.value !== "0") {
+            textMessage += "📦 Paket Vakum Varian : " + eVarian.options[eVarian.selectedIndex].text + "\n";
         }
-        if (eCampur.value !== "0") {
-            let txtCampur = eCampur.options[eCampur.selectedIndex].text.split(' - ')[0];
-            text += "📦 Paket Campur Vakum : " + txtCampur + "%0A";
+        if (eCampur && eCampur.value !== "0") {
+            textMessage += "📦 Paket Campur Vakum : " + eCampur.options[eCampur.selectedIndex].text + "\n";
         }
-        if (eTekwan.value !== "0") {
-            let txtTekwan = eTekwan.options[eTekwan.selectedIndex].text.split(' - ')[0];
-            text += "🍲 Tekwan Vakum : " + txtTekwan + "%0A";
+        if (eTekwan && eTekwan.value !== "0") {
+            textMessage += "🍲 Tekwan Vakum : " + eTekwan.options[eTekwan.selectedIndex].text + "\n";
         }
 
-        text += "%0A────────────────────%0A";
-        text += "💰 *Total Estimasi:* " + totalHarga + "%0A";
-        text += "────────────────────%0A%0A";
-        text += "Mohon segera diproses pesanan saya ya, Kak. Terima kasih! 🙏";
+        textMessage += "\n────────────────────\n";
+        textMessage += "💰 *Total Estimasi:* " + totalHarga + "\n";
+        textMessage += "────────────────────\n\n";
+        textMessage += "Jika sudah memesan, jangan lupa di screenshot Pesanan, kirim bukti ke admin\n\n";
+        textMessage += "Mohon segera diproses pesanan saya ya, Kak. Terima kasih! 🙏";
     }
 
-    // Eksekusi buka chat WhatsApp otomatis
-    window.location.href = "https://wa.me/62895806043807?text=" + text;
+    var encodedText = encodeURIComponent(textMessage);
+    window.location.href = "https://wa.me/62895806043807?text=" + encodedText;
 }
 
 function salinTeks(elementId) {
